@@ -1,6 +1,8 @@
 package com.pasindu.dev.booksly.model;
 
-public class BookModel {
+import java.io.Serializable;
+
+public class BookModel implements Serializable {
 
     private int course_image;
     private String book_title;

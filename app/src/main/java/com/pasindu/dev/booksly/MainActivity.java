@@ -8,18 +8,24 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.os.Handler;
 
 import com.pasindu.dev.booksly.Adapter.MostDownloadsAdapter;
 import com.pasindu.dev.booksly.Adapter.SliderAdapter;
+import com.pasindu.dev.booksly.interfaces.BooksAdapterInterface;
 import com.pasindu.dev.booksly.model.BookModel;
+import com.pasindu.dev.booksly.model.SliderItems;
+import com.pasindu.dev.booksly.ui.BooksActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BooksAdapterInterface {
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
     private RecyclerView bookRecyclerView;
@@ -29,9 +35,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        viewInit();
+    }
 
+    private void viewInit() {
         viewPager2 = findViewById(R.id.viewPagerImageSlider);
         bookRecyclerView = findViewById(R.id.MostDownloadBookRecyclerView);
+        createViewPager();
+    }
+
+    private void createViewPager() {
 
         List<SliderItems> sliderItems = new ArrayList<>();
         sliderItems.add(new SliderItems(R.drawable.book1));
@@ -83,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         bookRecyclerView.setLayoutManager(linearLayoutManager);
         bookRecyclerView.setAdapter(courseAdapter);
+        courseAdapter.setClickListener(this);
     }
 
     private Runnable sliderRunnable = new Runnable() {
@@ -102,5 +116,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         sliderHandler.postDelayed(sliderRunnable, 2000);
+    }
+
+    @Override
+    public void onClick(View view, int position) {
+        final BookModel bookModel = bookModelArrayList.get(position);
+        Intent intent = new Intent(this, BooksActivity.class);
+        intent.putExtra("BUNDLE", bookModel);
+        startActivity(intent);
     }
 }

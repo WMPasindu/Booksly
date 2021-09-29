@@ -10,7 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.pasindu.dev.booksly.R;
-import com.pasindu.dev.booksly.SliderItems;
+import com.pasindu.dev.booksly.model.SliderItems;
 
 import java.util.List;
 

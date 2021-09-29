@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pasindu.dev.booksly.R;
+import com.pasindu.dev.booksly.interfaces.BooksAdapterInterface;
 import com.pasindu.dev.booksly.model.BookModel;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 public class MostDownloadsAdapter extends RecyclerView.Adapter<MostDownloadsAdapter.Viewholder> {
     private Context context;
     private ArrayList<BookModel> bookModelArrayList;
+    private BooksAdapterInterface clickListener;
 
     // Constructor
     public MostDownloadsAdapter(Context context, ArrayList<BookModel> bookModelArrayList) {
@@ -51,9 +53,13 @@ public class MostDownloadsAdapter extends RecyclerView.Adapter<MostDownloadsAdap
         return bookModelArrayList.size();
     }
 
+    public void setClickListener(BooksAdapterInterface itemClickListener) {
+        this.clickListener = itemClickListener;
+    }
+
     // View holder class for initializing of
     // your views such as TextView and Imageview.
-    public class Viewholder extends RecyclerView.ViewHolder {
+    public class Viewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView id_image_view_book_image;
         private TextView id_text_view_book_title, id_text_view_author, id_text_view_amount, id_text_view_ratings;
 
@@ -64,6 +70,12 @@ public class MostDownloadsAdapter extends RecyclerView.Adapter<MostDownloadsAdap
             id_text_view_author = itemView.findViewById(R.id.id_text_view_author);
             id_text_view_amount = itemView.findViewById(R.id.id_text_view_amount);
             id_text_view_ratings = itemView.findViewById(R.id.id_text_view_ratings);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) clickListener.onClick(view, getAdapterPosition());
         }
     }
 }
