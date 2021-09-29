@@ -43,7 +43,7 @@
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/id_image_view_book_image"
             android:drawablePadding="2dp"
-            android:fontFamily="@font/sofia_regular"
+            android:fontFamily="@font/montserrat_medium"
             android:text="Author"
             android:textColor="@color/black"
             android:textSize="12dp" />
@@ -57,7 +57,7 @@
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/id_image_view_book_image"
             android:drawablePadding="2dp"
-            android:fontFamily="@font/sofia_regular"
+            android:fontFamily="@font/montserrat_medium"
             android:text="Rs.200.00"
             android:textColor="@color/black"
             android:textSize="15dp" />
@@ -84,9 +84,9 @@
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@id/image_rating"
             android:drawablePadding="2dp"
-            android:fontFamily="@font/sofia_regular"
-            android:textColor="@color/black"
+            android:fontFamily="@font/montserrat_medium"
             android:text="5.0"
+            android:textColor="@color/black"
             android:textSize="15dp" />
 
     </RelativeLayout>

@@ -86,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:padding="13dp"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="vertical">
 
                         <TextView
                             android:id="@+id/book_name"
@@ -94,23 +94,30 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
                             android:text="Book Name"
-                            android:layout_weight="5"
                             android:fontFamily="@font/sofia_regular"
                             android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
+                            android:id="@+id/book_author"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Author"
+                            android:fontFamily="@font/sofia_regular"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+
+                        <TextView
                             android:id="@+id/book_category"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="10dp"
-                            android:layout_weight="5"
                             android:text="Book Category"
-                            android:gravity="right"
                             android:fontFamily="@font/sofia_regular"
                             android:textColor="@color/black"
-                            android:textSize="12sp" />
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
@@ -118,30 +125,30 @@
                         android:id="@+id/layout_price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="13dp"
+                        android:paddingLeft="13dp"
+                        android:weightSum="10"
+                        android:paddingBottom="13dp"
                         android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/book_price_type"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Rs. "
-                            android:fontFamily="@font/sofia_regular"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:layout_weight="3"
+                            android:text="Total Downloads"
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textColor="@color/grey"
+                            android:textSize="12sp"/>
 
                         <TextView
-                            android:id="@+id/book_price"
+                            android:id="@+id/book_downloads"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="9"
+                            android:layout_weight="7"
                             android:text="1,000"
-                            android:fontFamily="@font/sofia_regular"
-                            android:textColor="@color/black"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
+                            android:fontFamily="@font/montserrat_medium"
+                            android:textColor="@color/purple_700"
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 

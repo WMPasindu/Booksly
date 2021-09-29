@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Assingment/EM/Booksly/app/src/main/res/layout/activity_books.xml" value="0.17028985507246377" />
+        <entry key="..\:/Assingment/EM/Booksly/app/src/main/res/layout/activity_main.xml" value="0.20018115942028986" />
+        <entry key="..\:/Assingment/EM/Booksly/app/src/main/res/layout/layout_rating_bar.xml" value="0.20018115942028986" />
+        <entry key="..\:/Assingment/EM/Booksly/app/src/main/res/layout/recycler_item_view.xml" value="0.20018115942028986" />
         <entry key="..\:/Masters/EM/Assignment/Booksly/app/src/main/res/layout/activity_books.xml" value="0.20416666666666666" />
         <entry key="..\:/Masters/EM/Assignment/Booksly/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Masters/EM/Assignment/Booksly/app/src/main/res/layout/bottom_seet_comment_fragment.xml" value="0.20416666666666666" />
@@ -13,7 +17,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

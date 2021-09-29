@@ -10,22 +10,20 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.View;
 import android.os.Handler;
 
 import com.pasindu.dev.booksly.Adapter.MostDownloadsAdapter;
 import com.pasindu.dev.booksly.Adapter.SliderAdapter;
-import com.pasindu.dev.booksly.interfaces.BooksAdapterInterface;
+import com.pasindu.dev.booksly.interfaces.IMostDownloadsCallbackListener;
 import com.pasindu.dev.booksly.model.BookModel;
 import com.pasindu.dev.booksly.model.SliderItems;
 import com.pasindu.dev.booksly.ui.BooksActivity;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements BooksAdapterInterface {
+public class MainActivity extends AppCompatActivity implements IMostDownloadsCallbackListener {
     private ViewPager2 viewPager2;
     private Handler sliderHandler = new Handler();
     private RecyclerView bookRecyclerView;

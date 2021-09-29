@@ -11,7 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.pasindu.dev.booksly.R;
-import com.pasindu.dev.booksly.interfaces.BooksAdapterInterface;
+import com.pasindu.dev.booksly.common.Common;
+import com.pasindu.dev.booksly.interfaces.IMostDownloadsCallbackListener;
 import com.pasindu.dev.booksly.model.BookModel;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.ArrayList;
 public class MostDownloadsAdapter extends RecyclerView.Adapter<MostDownloadsAdapter.Viewholder> {
     private Context context;
     private ArrayList<BookModel> bookModelArrayList;
-    private BooksAdapterInterface clickListener;
+    private IMostDownloadsCallbackListener clickListener;
 
     // Constructor
     public MostDownloadsAdapter(Context context, ArrayList<BookModel> bookModelArrayList) {
@@ -41,8 +42,8 @@ public class MostDownloadsAdapter extends RecyclerView.Adapter<MostDownloadsAdap
         BookModel model = bookModelArrayList.get(position);
         holder.id_text_view_book_title.setText(model.getBook_title());
         holder.id_text_view_author.setText(model.getBook_author());
-        holder.id_text_view_amount.setText("Rs. " + model.getBook_price());
-        holder.id_text_view_ratings.setText(""+ model.getBook_rating());
+        holder.id_text_view_amount.setText("Rs. " + Common.formatPrice(model.getBook_price()));
+        holder.id_text_view_ratings.setText(Common.formatRatings(model.getBook_rating()));
         holder.id_image_view_book_image.setImageResource(model.getCourse_image());
     }
 
@@ -53,7 +54,7 @@ public class MostDownloadsAdapter extends RecyclerView.Adapter<MostDownloadsAdap
         return bookModelArrayList.size();
     }
 
-    public void setClickListener(BooksAdapterInterface itemClickListener) {
+    public void setClickListener(IMostDownloadsCallbackListener itemClickListener) {
         this.clickListener = itemClickListener;
     }
 
